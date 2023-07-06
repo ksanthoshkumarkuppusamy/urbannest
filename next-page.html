@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="stylenextpage.css">
+  <script src="script.js"></script>
+</head>
+<body>
+  <div class="container">
+    <h2>Sign In</h2>
+    <form>
+      <div class="form-group">
+        </select>
+      </div>
+      <div id="mobileNumberGroup" class="form-group">
+        <label for="mobileNumber">Mobile Number:</label>
+        <input type="text" id="mobileNumber" name="mobileNumber">
+      </div>
+      <div id="passwordGroup" class="form-group">
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password">
+      </div>
+      <button type="submit">Sign In</button>
+    </form>
+    <p class="signup-link">New User? <a href="#" id="signup-link">Sign Up</a></p>
+
+    <script>
+     
+      var loginOption = document.getElementById('loginOption');
+      var mobileNumberGroup = document.getElementById('mobileNumberGroup');
+      var passwordGroup = document.getElementById('passwordGroup');
+
+
+      loginOption.addEventListener('change', function() {
+        if (loginOption.value === 'mobile') {
+          mobileNumberGroup.style.display = 'block';
+          passwordGroup.style.display = 'none';
+        } else {
+          mobileNumberGroup.style.display = 'none';
+          passwordGroup.style.display = 'block';
+        }
+      });
+
+
+      var signupLink = document.getElementById('signup-link');
+      signupLink.addEventListener('click', function(event) {
+        event.preventDefault();
+        window.location.href = 'signup.html';
+      });
+    </script>
+  </div>
+  <style>
+  .container {
+    width: 300px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  h2 {
+    text-align: center;
+  }
+  
+  .form-group {
+    margin-bottom: 15px;
+  }
+  
+  label {
+    display: block;
+    font-weight: bold;
+  }
+  
+  input[type="text"],
+  input[type="email"],
+  input[type="password"],
+  select {
+    width: 100%;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+  }
+  
+  button[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    background-color: #aa1bbd;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+  }
+  
+  .signup-link {
+    text-align: center;
+    margin-top: 10px;
+  }
+  
+  .signup-link a {
+    color: #82189c;
+  }
+</style>
+  
+</body>
+</html>
